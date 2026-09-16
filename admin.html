@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | FoodRedistribute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+
+        <div class="dashboard-logo">
+            🍲 Food<span>Redistribute</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="active">📊 Overview</a>
+            <a href="#">👥 Users</a>
+            <a href="#">🤝 NGOs</a>
+            <a href="#">🍱 Donations</a>
+            <a href="#">🚚 Deliveries</a>
+            <a href="#">📈 Analytics</a>
+            <a href="#">🔔 Notifications</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🏠 Back to Website</a>
+            <a href="login.html" onclick="logoutUser()">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-welcome">ADMIN DASHBOARD</p>
+                <h1>Welcome back, Administrator 👋</h1>
+                <p>Manage users, food flow, donations, and platform activity.</p>
+            </div>
+
+            <div class="dashboard-profile">
+                <div class="profile-avatar">🛡️</div>
+                <div>
+                    <strong>Admin</strong>
+                    <span>Platform Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-stats">
+            <div class="dashboard-stat-card">
+                <div class="stat-icon green">👥</div>
+                <div>
+                    <span>Total Users</span>
+                    <strong id="adminUsersTotal">--</strong>
+                    <small>Platform members</small>
+                </div>
+            </div>
+
+            <div class="dashboard-stat-card">
+                <div class="stat-icon orange">🍱</div>
+                <div>
+                    <span>Active Donations</span>
+                    <strong id="adminDonationsTotal">--</strong>
+                    <small>Available listings</small>
+                </div>
+            </div>
+
+            <div class="dashboard-stat-card">
+                <div class="stat-icon blue">🚚</div>
+                <div>
+                    <span>Deliveries</span>
+                    <strong id="adminDeliveriesTotal">--</strong>
+                    <small>Ongoing and closed</small>
+                </div>
+            </div>
+
+            <div class="dashboard-stat-card">
+                <div class="stat-icon purple">♻️</div>
+                <div>
+                    <span>Meals Saved</span>
+                    <strong id="adminMealsSaved">--</strong>
+                    <small>Impact generated</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-top-grid">
+            <div class="quick-action-card">
+                <div>
+                    <span class="card-label">SYSTEM OVERVIEW</span>
+                    <h2>Platform health is running</h2>
+                    <p>Monitor food donations, NGO demand, delivery activity, and administrative metrics.</p>
+                </div>
+                <a href="#" class="dashboard-action-button">View Reports</a>
+            </div>
+
+            <div class="notification-card">
+                <div class="card-heading">
+                    <h3>Recent Platform Activity</h3>
+                    <span>Live</span>
+                </div>
+                <ul class="notification-list">
+                    <li>✔ NGO requests being matched</li>
+                    <li>✔ Donation records syncing</li>
+                    <li>✔ Delivery logs updating</li>
+                    <li>✔ Alerts monitored</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="section-title-row">
+                <h2>Admin Summary</h2>
+            </div>
+
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Module</th>
+                            <th>Status</th>
+                            <th>Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Users</td>
+                            <td><span class="status pending">Active</span></td>
+                            <td>Just now</td>
+                        </tr>
+                        <tr>
+                            <td>NGO Matching</td>
+                            <td><span class="status approved">Ready</span></td>
+                            <td>Just now</td>
+                        </tr>
+                        <tr>
+                            <td>Donations</td>
+                            <td><span class="status approved">Healthy</span></td>
+                            <td>Just now</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

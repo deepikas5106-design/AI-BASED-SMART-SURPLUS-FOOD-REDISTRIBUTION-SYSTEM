@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Donor Dashboard | FoodRedistribute</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="dashboard-logo">
+            🍲 Food<span>Redistribute</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="active">
+                📊 Dashboard
+            </a>
+
+            <a href="donate.html">
+                🍱 Donate Food
+            </a>
+
+            <a href="need_food.html">
+                🤝 Find Food
+            </a>
+
+            <a href="#">
+                📋 My Donations
+            </a>
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+            <a href="#">
+                📈 My Impact
+            </a>
+
+            <a href="#">
+                👤 Profile
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">
+                🏠 Back to Website
+            </a>
+
+            <a href="login.html" onclick="logoutUser()">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="dashboard-welcome">
+                    DONOR DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back! 👋
+                </h1>
+
+                <p>
+                    Here's an overview of your food redistribution impact.
+                </p>
+
+            </div>
+
+            <div class="dashboard-profile">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+                <div>
+                    <strong>Food Donor</strong>
+                    <span>Active Donor</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="dashboard-stats">
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon green">
+                    🍱
+                </div>
+
+                <div>
+                    <span>Total Donations</span>
+                    <strong>24</strong>
+                    <small>+4 this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon orange">
+                    🍽️
+                </div>
+
+                <div>
+                    <span>Meals Saved</span>
+                    <strong>680</strong>
+                    <small>+120 this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon blue">
+                    🤝
+                </div>
+
+                <div>
+                    <span>People Helped</span>
+                    <strong>320</strong>
+                    <small>+45 this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon purple">
+                    ♻️
+                </div>
+
+                <div>
+                    <span>Food Saved</span>
+                    <strong>185 kg</strong>
+                    <small>+32 kg this month</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTION + NOTIFICATION -->
+
+        <section class="dashboard-top-grid">
+
+
+            <!-- QUICK ACTION -->
+
+            <div class="quick-action-card">
+
+                <div>
+
+                    <span class="card-label">
+                        MAKE AN IMPACT
+                    </span>
+
+                    <h2>
+                        Have surplus food?
+                    </h2>
+
+                    <p>
+                        Donate your extra food and help someone
+                        in need today.
+                    </p>
+
+                </div>
+
+                <a href="donate.html"
+                   class="dashboard-action-button">
+
+                    + Donate Food
+
+                </a>
+
+            </div>
+
+
+            <!-- NOTIFICATION -->
+
+            <div class="notification-card">
+
+                <div class="card-heading">
+
+                    <h3>
+                        🔔 Notifications
+                    </h3>
+
+                    <span class="notification-count">
+                        3
+                    </span>
+
+                </div>
+
+                <div class="notification-item">
+
+                    <span>🤝</span>
+
+                    <p>
+                        Your recent donation was accepted
+                        by an NGO.
+                    </p>
+
+                </div>
+
+                <div class="notification-item">
+
+                    <span>📦</span>
+
+                    <p>
+                        Your donation pickup is scheduled
+                        for today.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+     RECENT DONATIONS
+========================= -->
+
+<section class="recent-section">
+
+    <div class="section-heading-row">
+
+        <div>
+
+            <span class="card-label">
+                DONATION ACTIVITY
+            </span>
+
+            <h2>
+                Recent Donations
+            </h2>
+
+        </div>
+
+        <a href="#">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="donation-table-wrapper">
+
+        <table class="donation-table">
+
+            <thead>
+
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Recipient</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="donationList">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     IMPACT
+========================= -->
+
+<section class="impact-card">
+
+    <div class="impact-content">
+
+        <span class="card-label">
+            YOUR CONTRIBUTION
+        </span>
+
+        <h2>
+            You're making a difference 🌱
+        </h2>
+
+        <p>
+            Your donations have helped save food and
+            provide meals to people in need.
+        </p>
+
+    </div>
+
+
+    <div class="impact-number">
+
+        <strong>680</strong>
+
+        <span>
+            meals provided
+        </span>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

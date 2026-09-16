@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FoodRedistribute</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="login-body">
+
+    <!-- =========================
+         LOGIN NAVBAR
+    ========================== -->
+
+    <header class="login-navbar">
+
+        <a href="index.html" class="login-logo">
+            🍲 <span>Food</span>Redistribute
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
+
+    <main class="login-main">
+
+        <div class="login-wrapper">
+
+
+            <!-- =========================
+                 LEFT SIDE
+            ========================== -->
+
+            <section class="login-info">
+
+                <div class="info-content">
+
+                    <div class="info-badge">
+                        🌱 SMART FOOD REDISTRIBUTION
+                    </div>
+
+                    <h1>
+                        Give Surplus Food
+                        <span>a Second Chance.</span>
+                    </h1>
+
+                    <p class="info-description">
+                        Join our smart food redistribution platform
+                        and help connect surplus food with people
+                        and communities in need.
+                    </p>
+
+
+                    <!-- BENEFITS -->
+
+                    <div class="login-benefits">
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                🤖
+                            </div>
+
+                            <div>
+                                <h3>AI-Powered</h3>
+
+                                <p>
+                                    Smart food analysis and matching
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                🤝
+                            </div>
+
+                            <div>
+                                <h3>Community Driven</h3>
+
+                                <p>
+                                    Connect donors with NGOs
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                ♻️
+                            </div>
+
+                            <div>
+                                <h3>Reduce Food Waste</h3>
+
+                                <p>
+                                    Turn surplus into valuable meals
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATISTICS -->
+
+                    <div class="login-stats">
+
+                        <div class="login-stat">
+
+                            <strong>1000+</strong>
+
+                            <span>Meals Saved</span>
+
+                        </div>
+
+
+                        <div class="login-stat">
+
+                            <strong>250+</strong>
+
+                            <span>Donors</span>
+
+                        </div>
+
+
+                        <div class="login-stat">
+
+                            <strong>50+</strong>
+
+                            <span>NGO Partners</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RIGHT SIDE
+            ========================== -->
+
+            <section class="login-form-section">
+
+                <div class="login-card">
+
+
+                    <!-- HEADER -->
+
+                    <div class="login-card-header">
+
+                        <div class="login-circle">
+                            🔐
+                        </div>
+
+                        <div>
+
+                            <span class="login-label">
+                                WELCOME BACK
+                            </span>
+
+                            <h2>
+                                Login to your account
+                            </h2>
+
+                            <p>
+                                Access your FoodRedistribute dashboard
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN FORM -->
+
+                    <form id="loginForm">
+
+
+                        <!-- ROLE -->
+
+                        <div class="form-field">
+
+                            <label for="userRole">
+                                Login As
+                            </label>
+
+                            <select
+                                id="userRole"
+                                name="userRole">
+
+                                <option value="">
+                                    Select your role
+                                </option>
+
+                                <option value="individual">
+                                    👤 Individual / Food Donor
+                                </option>
+
+                                <option value="ngo">
+                                    🤝 NGO / Organization
+                                </option>
+
+                                <option value="admin">
+                                    🛡️ Administrator
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-field">
+
+                            <label for="loginEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ✉️
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    name="loginEmail"
+                                    placeholder="Enter your email address"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="form-field">
+
+                            <div class="password-label">
+
+                                <label for="loginPassword">
+                                    Password
+                                </label>
+
+                                <a href="#">
+                                    Forgot password?
+                                </a>
+
+                            </div>
+
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    🔑
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    name="loginPassword"
+                                    placeholder="Enter your password"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="show-password"
+                                    id="togglePassword">
+
+                                    👁️
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- REMEMBER -->
+
+                        <div class="remember-row">
+
+                            <label class="remember-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberMe">
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="modern-login-button">
+
+                            <span>Login to Dashboard</span>
+
+                            <span class="button-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- MESSAGE -->
+
+                        <p id="loginMessage"></p>
+
+                    </form>
+
+
+                    <!-- REGISTER -->
+
+                    <div class="create-account">
+
+                        <span>
+                            Don't have an account?
+                        </span>
+
+                        <a href="register.html">
+                            Create an account →
+                        </a>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="login-security">
+
+                        🔒 Your information is securely protected
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="login-footer">
+
+        <p>
+            © 2026 FoodRedistribute
+        </p>
+
+        <span>
+            AI-Based Smart Surplus Food Redistribution System
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
