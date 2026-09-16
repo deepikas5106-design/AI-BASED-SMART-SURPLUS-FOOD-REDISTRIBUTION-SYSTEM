@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flask-CORS
+python-dotenv
+Werkzeug
+pytest
+qrcode
+pillow
+scikit-learn
+pandas
+joblib

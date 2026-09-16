@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Need Food | FoodRedistribute</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🍲 FoodRedistribute
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#features">
+            Features
+        </a>
+
+        <a href="index.html#how-it-works">
+            How It Works
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE INTRO
+===================================================== -->
+
+<section class="food-request-hero">
+
+    <div class="food-request-hero-content">
+
+        <span class="hero-badge">
+            🤝 FOOD ASSISTANCE
+        </span>
+
+        <h1>
+            Find Food When You Need It
+        </h1>
+
+        <p>
+            Request surplus food or explore available
+            donations from our food redistribution network.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AVAILABLE FOOD
+===================================================== -->
+
+<section class="available-food-section"
+         id="available-food">
+
+    <div class="section-title">
+
+        <span>
+            AVAILABLE FOOD
+        </span>
+
+        <h2>
+            Surplus Food Near You
+        </h2>
+
+        <p>
+            Browse food donations currently available
+            from our donors.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="food-search-container">
+
+        <input
+            type="text"
+            id="needFoodSearch"
+            placeholder="🔍 Search food..."
+            oninput="filterNeedFood()">
+
+
+        <select
+            id="needFoodType"
+            onchange="filterNeedFood()">
+
+            <option value="">
+                All Food
+            </option>
+
+            <option value="cooked">
+                Cooked Food
+            </option>
+
+            <option value="bakery">
+                Bakery
+            </option>
+
+            <option value="fruit">
+                Fruits
+            </option>
+
+            <option value="vegetable">
+                Vegetables
+            </option>
+
+            <option value="packaged">
+                Packaged Food
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- FOOD CARDS -->
+
+    <div class="available-food-grid"
+         id="needFoodList">
+
+        <!-- JavaScript will add food here -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REQUEST FOOD
+===================================================== -->
+
+<section class="donation-page"
+         id="request-food">
+
+    <div class="donation-container">
+
+
+        <div class="donation-heading">
+
+            <span>
+                FOOD REQUEST
+            </span>
+
+            <h1>
+                Request Food
+            </h1>
+
+            <p>
+                Tell us what food is needed. Your request
+                can help connect you with available surplus food.
+            </p>
+
+        </div>
+
+
+
+        <form id="foodRequestForm">
+
+
+            <!-- REQUESTER -->
+
+            <h2>
+                Requester Information
+            </h2>
+
+
+            <div class="form-group">
+
+                <label for="requesterName">
+                    Name / Organization Name
+                </label>
+
+                <input
+                    type="text"
+                    id="requesterName"
+                    name="requesterName"
+                    placeholder="Enter your name or organization name"
+                    required>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="requesterType">
+                    Requester Type
+                </label>
+
+                <select
+                    id="requesterType"
+                    name="requesterType"
+                    required>
+
+                    <option value="">
+                        Select requester type
+                    </option>
+
+                    <option value="ngo">
+                        NGO
+                    </option>
+
+                    <option value="orphanage">
+                        Orphanage
+                    </option>
+
+                    <option value="old-age-home">
+                        Old Age Home
+                    </option>
+
+                    <option value="shelter">
+                        Shelter
+                    </option>
+
+                    <option value="individual">
+                        Individual
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="requestPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="requestPhone"
+                        name="requestPhone"
+                        placeholder="Enter phone number"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="requestEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="requestEmail"
+                        name="requestEmail"
+                        placeholder="Enter email address">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOD REQUIREMENT -->
+
+            <h2>
+                Food Requirement
+            </h2>
+
+
+            <div class="form-group">
+
+                <label for="requiredFood">
+                    Food Required
+                </label>
+
+                <input
+                    type="text"
+                    id="requiredFood"
+                    name="requiredFood"
+                    placeholder="Example: Rice, Biryani, Chapati"
+                    required>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="requiredQuantity">
+                        Quantity Required
+                    </label>
+
+                    <input
+                        type="number"
+                        id="requiredQuantity"
+                        name="requiredQuantity"
+                        min="1"
+                        placeholder="Example: 50"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="requiredUnit">
+                        Unit
+                    </label>
+
+                    <select
+                        id="requiredUnit"
+                        name="requiredUnit"
+                        required>
+
+                        <option value="">
+                            Select unit
+                        </option>
+
+                        <option value="meals">
+                            Meals
+                        </option>
+
+                        <option value="kg">
+                            Kilograms
+                        </option>
+
+                        <option value="litres">
+                            Litres
+                        </option>
+
+                        <option value="packets">
+                            Packets
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="foodPreference">
+                    Food Preference
+                </label>
+
+                <select
+                    id="foodPreference"
+                    name="foodPreference"
+                    required>
+
+                    <option value="">
+                        Select food preference
+                    </option>
+
+                    <option value="vegetarian">
+                        Vegetarian
+                    </option>
+
+                    <option value="non-vegetarian">
+                        Non-Vegetarian
+                    </option>
+
+                    <option value="vegan">
+                        Vegan
+                    </option>
+
+                    <option value="any">
+                        Any
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="neededDate">
+                    Food Needed Date & Time
+                </label>
+
+                <input
+                    type="datetime-local"
+                    id="neededDate"
+                    name="neededDate"
+                    required>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <h2>
+                Delivery / Pickup Information
+            </h2>
+
+
+            <div class="form-group">
+
+                <label for="requestAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="requestAddress"
+                    name="requestAddress"
+                    rows="4"
+                    placeholder="Enter complete address"
+                    required></textarea>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="requestCity">
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        id="requestCity"
+                        name="requestCity"
+                        placeholder="Example: Bengaluru"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="requestPincode">
+                        Pincode
+                    </label>
+
+                    <input
+                        type="text"
+                        id="requestPincode"
+                        name="requestPincode"
+                        placeholder="Enter pincode"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADDITIONAL -->
+
+            <div class="form-group">
+
+                <label for="requestDescription">
+                    Additional Information
+                </label>
+
+                <textarea
+                    id="requestDescription"
+                    name="requestDescription"
+                    rows="4"
+                    placeholder="Mention any special requirements"></textarea>
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="donate-submit">
+
+                🤝 Submit Food Request
+
+            </button>
+
+
+            <p id="requestMessage"></p>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+
+        <h3>
+            🍲 FoodRedistribute
+        </h3>
+
+        <p>
+            Connecting surplus food with people in need.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            Quick Links
+        </h4>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="donate.html">
+            Donate Food
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            Our Mission
+        </h4>
+
+        <p>
+            Reduce food waste.
+            Feed communities.
+            Build a sustainable future.
+        </p>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 FoodRedistribute.
+        AI-Based Smart Surplus Food Redistribution System.
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

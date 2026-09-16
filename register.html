@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | FoodRedistribute</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <!-- NAVBAR -->
+
+    <header class="login-navbar">
+
+        <a href="index.html" class="login-logo">
+            🍲 <span>Food</span>Redistribute
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- REGISTRATION -->
+
+    <main class="login-main">
+
+        <div class="register-wrapper">
+
+
+            <!-- LEFT INFORMATION -->
+
+            <section class="register-info">
+
+                <div class="info-content">
+
+                    <div class="info-badge">
+                        🌱 JOIN FOODREDISTRIBUTE
+                    </div>
+
+                    <h1>
+                        Be Part of the
+                        <span>Food Rescue Community.</span>
+                    </h1>
+
+                    <p class="info-description">
+                        Create an account and help make surplus
+                        food available to people and communities
+                        who need it.
+                    </p>
+
+
+                    <div class="login-benefits">
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                🍱
+                            </div>
+
+                            <div>
+                                <h3>Donate Surplus Food</h3>
+
+                                <p>
+                                    Help prevent good food from being wasted
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                🤝
+                            </div>
+
+                            <div>
+                                <h3>Connect With NGOs</h3>
+
+                                <p>
+                                    Build connections with local organizations
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                📊
+                            </div>
+
+                            <div>
+                                <h3>Track Your Impact</h3>
+
+                                <p>
+                                    Monitor your food redistribution activities
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REGISTRATION FORM -->
+
+            <section class="register-form-section">
+
+                <div class="register-card">
+
+                    <div class="register-heading">
+
+                        <div class="login-circle">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <span class="login-label">
+                                GET STARTED
+                            </span>
+
+                            <h2>
+                                Create your account
+                            </h2>
+
+                            <p>
+                                Register to start using FoodRedistribute
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="registerForm">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-field">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    👤
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACCOUNT TYPE -->
+
+                        <div class="form-field">
+
+                            <label for="accountType">
+                                Account Type
+                            </label>
+
+                            <select
+                                id="accountType"
+                                name="accountType"
+                                required>
+
+                                <option value="">
+                                    Select account type
+                                </option>
+
+                                <option value="donor">
+                                    🍱 Food Donor / Individual
+                                </option>
+
+                                <option value="ngo">
+                                    🤝 NGO / Organization
+                                </option>
+
+                                <option value="admin">
+                                    🛡️ Administrator
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- EMAIL + PHONE -->
+
+                        <div class="register-row">
+
+                            <div class="form-field">
+
+                                <label for="registerEmail">
+                                    Email Address
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-icon">
+                                        ✉️
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="registerEmail"
+                                        name="registerEmail"
+                                        placeholder="Email"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="registerPhone">
+                                    Phone Number
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-icon">
+                                        📱
+                                    </span>
+
+                                    <input
+                                        type="tel"
+                                        id="registerPhone"
+                                        name="registerPhone"
+                                        placeholder="Phone"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD + CONFIRM -->
+
+                        <div class="register-row">
+
+                            <div class="form-field">
+
+                                <label for="registerPassword">
+                                    Password
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-icon">
+                                        🔑
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="registerPassword"
+                                        name="registerPassword"
+                                        placeholder="Create password"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="confirmPassword">
+                                    Confirm Password
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-icon">
+                                        🔐
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        name="confirmPassword"
+                                        placeholder="Confirm password"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-field">
+
+                            <label for="registerAddress">
+                                Address
+                            </label>
+
+                            <textarea
+                                id="registerAddress"
+                                name="registerAddress"
+                                rows="3"
+                                placeholder="Enter your address"
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- CITY + PINCODE -->
+
+                        <div class="register-row">
+
+                            <div class="form-field">
+
+                                <label for="registerCity">
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="registerCity"
+                                    name="registerCity"
+                                    placeholder="City"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="registerPincode">
+                                    Pincode
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="registerPincode"
+                                    name="registerPincode"
+                                    placeholder="Pincode"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TERMS -->
+
+                        <div class="terms-row">
+
+                            <label>
+
+                                <input
+                                    type="checkbox"
+                                    id="terms"
+                                    required>
+
+                                <span>
+                                    I agree to the
+                                    <a href="#">
+                                        Terms & Conditions
+                                    </a>
+                                    and
+                                    <a href="#">
+                                        Privacy Policy
+                                    </a>.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="modern-login-button">
+
+                            <span>
+                                Create Account
+                            </span>
+
+                            <span class="button-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <p id="registerMessage"></p>
+
+                    </form>
+
+
+                    <!-- LOGIN -->
+
+                    <div class="create-account">
+
+                        <span>
+                            Already have an account?
+                        </span>
+
+                        <a href="login.html">
+                            Login →
+                        </a>
+
+                    </div>
+
+
+                    <div class="login-security">
+
+                        🔒 Your information is securely protected
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="login-footer">
+
+        <p>
+            © 2026 FoodRedistribute
+        </p>
+
+        <span>
+            AI-Based Smart Surplus Food Redistribution System
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
