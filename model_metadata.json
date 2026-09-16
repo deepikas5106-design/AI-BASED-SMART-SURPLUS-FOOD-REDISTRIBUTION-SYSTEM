@@ -1,0 +1,22 @@
+{
+  "feature_columns": [
+    "expiry_hours",
+    "quantity",
+    "food_type",
+    "donation_age_hours",
+    "storage_condition",
+    "food_category"
+  ],
+  "numeric_columns": [
+    "expiry_hours",
+    "quantity",
+    "donation_age_hours"
+  ],
+  "categorical_columns": [
+    "food_type",
+    "storage_condition",
+    "food_category"
+  ],
+  "model_type": "RandomForestClassifier",
+  "accuracy": 0.875
+}
