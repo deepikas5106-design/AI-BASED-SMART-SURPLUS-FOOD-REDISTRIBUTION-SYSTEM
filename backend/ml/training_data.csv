@@ -1,0 +1,33 @@
+expiry_hours,quantity,food_type,donation_age_hours,storage_condition,food_category,priority
+2,10,cooked,1,refrigerated,non_vegetarian,Critical
+3,15,cooked,2,refrigerated,vegetarian,Critical
+5,12,milk,1,refrigerated,dairy,Critical
+4,20,meat,2,frozen,non_vegetarian,Critical
+6,18,bakery,3,room_temperature,bakery,High
+8,16,fruits,4,refrigerated,vegetarian,High
+10,25,vegetables,5,refrigerated,vegetarian,High
+12,30,cooked,5,refrigerated,non_vegetarian,High
+14,12,bakery,6,room_temperature,bakery,Medium
+18,22,fruits,7,refrigerated,vegetarian,Medium
+20,40,vegetables,8,room_temperature,vegetarian,Medium
+24,35,fruit,10,refrigerated,vegetarian,Medium
+36,30,packaged,12,room_temperature,packaged,Low
+48,50,rice,18,dry,grain,Low
+72,60,lentils,25,dry,grain,Low
+96,45,packaged,30,room_temperature,packaged,Low
+30,18,dairy,9,refrigerated,dairy,Medium
+16,20,meat,5,frozen,non_vegetarian,Critical
+9,14,salad,3,refrigerated,vegetarian,High
+7,10,seafood,2,frozen,non_vegetarian,Critical
+15,24,vegetables,6,room_temperature,vegetarian,High
+21,18,bread,7,room_temperature,bakery,Medium
+40,80,dry food,15,dry,grain,Low
+55,90,rice,20,dry,grain,Low
+50,70,packaged,22,room_temperature,packaged,Low
+11,24,milk,3,refrigerated,dairy,High
+5,8,cooked food,2,refrigerated,non_vegetarian,Critical
+27,32,cakes,11,room_temperature,bakery,Medium
+48,15,fruits,12,refrigerated,vegetarian,Medium
+18,10,prepared food,8,refrigerated,non_vegetarian,High
+72,20,grain,30,dry,grain,Low
+4,9,cooked,1,refrigerated,dairy,Critical

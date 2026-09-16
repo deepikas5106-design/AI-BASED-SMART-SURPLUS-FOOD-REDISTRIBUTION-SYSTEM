@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NGO Dashboard | FoodRedistribute</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="dashboard-logo">
+            🍲 Food<span>Redistribute</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="active">
+                📊 Dashboard
+            </a>
+
+            <a href="#available-food">
+                🔍 Find Food
+            </a>
+
+            <a href="#requests">
+                📦 My Requests
+            </a>
+
+            <a href="#pickups">
+                🚚 Pickups
+            </a>
+
+            <a href="#notifications">
+                🔔 Notifications
+            </a>
+
+            <a href="#impact">
+                📈 NGO Impact
+            </a>
+
+            <a href="#">
+                👤 Organization Profile
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">
+                🏠 Back to Website
+            </a>
+
+            <a href="login.html"
+               onclick="logoutUser()">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="dashboard-welcome">
+                    NGO DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back! 🤝
+                </h1>
+
+                <p>
+                    Find available surplus food and help your community.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-profile">
+
+                <div class="profile-avatar">
+                    🤝
+                </div>
+
+                <div>
+
+                    <strong>Helping Hands NGO</strong>
+
+                    <span>
+                        Verified Organization
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="dashboard-stats">
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon green">
+                    🍱
+                </div>
+
+                <div>
+
+                    <span>Food Received</span>
+
+                    <strong id="ngoFoodReceived">
+                        0
+                    </strong>
+
+                    <small>
+                        Donations accepted
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon orange">
+                    🍽️
+                </div>
+
+                <div>
+
+                    <span>Meals Distributed</span>
+
+                    <strong id="ngoMeals">
+                        0
+                    </strong>
+
+                    <small>
+                        Meals received
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon blue">
+                    👥
+                </div>
+
+                <div>
+
+                    <span>People Helped</span>
+
+                    <strong id="ngoPeople">
+                        0
+                    </strong>
+
+                    <small>
+                        Community impact
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon purple">
+                    ♻️
+                </div>
+
+                <div>
+
+                    <span>Food Rescued</span>
+
+                    <strong id="ngoFoodKg">
+                        0 kg
+                    </strong>
+
+                    <small>
+                        Food saved
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTION + NOTIFICATION -->
+
+        <section class="dashboard-top-grid">
+
+
+            <div class="quick-action-card">
+
+                <div>
+
+                    <span class="card-label">
+                        HELP YOUR COMMUNITY
+                    </span>
+
+                    <h2>
+                        Find surplus food nearby.
+                    </h2>
+
+                    <p>
+                        Browse food donations submitted by
+                        restaurants, hotels and individuals.
+                    </p>
+
+                </div>
+
+                <a href="#available-food"
+                   class="dashboard-action-button">
+
+                    🔍 Find Available Food
+
+                </a>
+
+            </div>
+
+
+            <div class="notification-card"
+                 id="notifications">
+
+                <div class="card-heading">
+
+                    <h3>
+                        🔔 Notifications
+                    </h3>
+
+                    <span class="notification-count">
+                        2
+                    </span>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <span>🍱</span>
+
+                    <p>
+                        New surplus food donations may be
+                        available near your organization.
+                    </p>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <span>🚚</span>
+
+                    <p>
+                        Remember to arrange pickup for
+                        accepted donations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVAILABLE FOOD -->
+
+        <section class="recent-section"
+                 id="available-food">
+
+            <div class="section-heading-row">
+
+                <div>
+
+                    <span class="card-label">
+                        AVAILABLE DONATIONS
+                    </span>
+
+                    <h2>
+                        Food Available Near You
+                    </h2>
+                    <div class="food-search-box">
+
+    <input
+        type="text"
+        id="foodSearch"
+        placeholder="🔍 Search available food..."
+        oninput="filterAvailableFood()">
+
+    <select
+        id="foodTypeFilter"
+        onchange="filterAvailableFood()">
+
+        <option value="">All Food Types</option>
+        <option value="Cooked">Cooked Food</option>
+        <option value="Bakery">Bakery Items</option>
+        <option value="Fruit">Fruits</option>
+        <option value="Vegetable">Vegetables</option>
+        <option value="Packaged">Packaged Food</option>
+
+    </select>
+
+</div>
+
+                </div>
+
+            </div>
+
+
+            <div class="donation-table-wrapper">
+
+                <table class="donation-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Food</th>
+
+                            <th>Priority</th>
+
+                            <th>Quantity</th>
+
+                            <th>Remaining</th>
+
+                            <th>Location</th>
+
+                            <th>Best Before</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!-- IMPORTANT:
+                         JavaScript fills this automatically -->
+
+                    <tbody id="availableFoodList">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- MY REQUESTS -->
+
+        <section class="recent-section"
+                 id="requests">
+
+            <div class="section-heading-row">
+
+                <div>
+
+                    <span class="card-label">
+                        REQUEST ACTIVITY
+                    </span>
+
+                    <h2>
+                        My Requests
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="donation-table-wrapper">
+
+                <table class="donation-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Food</th>
+
+                            <th>Quantity</th>
+
+                            <th>Donor</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="ngoRequestList">
+
+                        <tr>
+
+                            <td colspan="4"
+                                style="text-align:center;">
+
+                                No requests yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- PICKUPS -->
+
+        <section class="recent-section"
+                 id="pickups">
+
+            <div class="section-heading-row">
+
+                <div>
+
+                    <span class="card-label">
+                        PICKUP MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Upcoming Pickups
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="donation-table-wrapper">
+
+                <table class="donation-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Food</th>
+
+                            <th>Location</th>
+
+                            <th>Pickup Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="pickupList">
+
+                        <tr>
+
+                            <td colspan="3"
+                                style="text-align:center;">
+
+                                No pickups scheduled.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPACT -->
+
+        <section class="impact-card"
+                 id="impact">
+
+            <div class="impact-content">
+
+                <span class="card-label">
+                    COMMUNITY IMPACT
+                </span>
+
+                <h2>
+                    Together, we're feeding communities 🌱
+                </h2>
+
+                <p>
+                    Every accepted donation helps reduce food
+                    waste and provide meals to people in need.
+                </p>
+
+            </div>
+
+
+            <div class="impact-number">
+
+                <strong id="ngoImpactMeals">
+                    0
+                </strong>
+
+                <span>
+                    meals received
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

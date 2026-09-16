@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Priority Prediction | FoodRedistribute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <header class="login-navbar">
+        <a href="index.html" class="login-logo">
+            🍲 <span>Food</span>Redistribute
+        </a>
+
+        <div class="header-links">
+            <a href="dashboard.html" class="back-home">
+                ← Dashboard
+            </a>
+            <a href="index.html" class="back-home">
+                Home
+            </a>
+        </div>
+    </header>
+
+    <main class="food-priority-page">
+
+        <section class="food-priority-card">
+
+            <div class="food-priority-header">
+                <span class="login-label">AI FOOD PRIORITY</span>
+                <h1>Food Priority Prediction</h1>
+                <p>
+                    Analyze donated food and determine how urgently it should be redistributed.
+                </p>
+            </div>
+
+            <form id="foodPriorityForm" class="food-priority-form" novalidate>
+
+                <div class="food-priority-grid">
+
+                    <div class="form-field">
+                        <label for="expiryHours">Expiry Hours</label>
+                        <input
+                            id="expiryHours"
+                            name="expiry_hours"
+                            type="number"
+                            min="0"
+                            step="0.1"
+                            value="2"
+                            required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="quantity">Quantity</label>
+                        <input
+                            id="quantity"
+                            name="quantity"
+                            type="number"
+                            min="0"
+                            step="0.1"
+                            value="10"
+                            required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="foodType">Food Type</label>
+                        <select id="foodType" name="food_type" required>
+                            <option value="">Select food type</option>
+                            <option value="cooked" selected>cooked</option>
+                            <option value="vegetarian">vegetarian</option>
+                            <option value="bakery">bakery</option>
+                            <option value="packaged">packaged</option>
+                            <option value="fruits">fruits</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="donationAgeHours">Donation Age Hours</label>
+                        <input
+                            id="donationAgeHours"
+                            name="donation_age_hours"
+                            type="number"
+                            min="0"
+                            step="0.1"
+                            value="1"
+                            required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="storageCondition">Storage Condition</label>
+                        <select id="storageCondition" name="storage_condition" required>
+                            <option value="">Select storage condition</option>
+                            <option value="refrigerated" selected>refrigerated</option>
+                            <option value="room_temperature">room_temperature</option>
+                            <option value="frozen">frozen</option>
+                            <option value="dry">dry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="foodCategory">Food Category</label>
+                        <select id="foodCategory" name="food_category" required>
+                            <option value="">Select food category</option>
+                            <option value="non_vegetarian" selected>non_vegetarian</option>
+                            <option value="vegetarian">vegetarian</option>
+                            <option value="dairy">dairy</option>
+                            <option value="grain">grain</option>
+                            <option value="bakery">bakery</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div id="foodPriorityError" class="food-priority-error" aria-live="polite"></div>
+
+                <button type="submit" class="food-priority-submit">
+                    Predict Food Priority
+                </button>
+            </form>
+
+            <div id="foodPriorityResult" class="food-priority-result hidden" aria-live="polite">
+                <div class="result-label">Prediction Result</div>
+                <div class="result-row">
+                    <span class="result-text">Priority Level</span>
+                    <span id="foodPriorityValue" class="priority-value">-</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-text">Confidence</span>
+                    <span id="foodPriorityConfidence" class="confidence-value">-</span>
+                </div>
+                <p id="foodPriorityMessage" class="result-message"></p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

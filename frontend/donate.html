@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donate Food | FoodRedistribute</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f8f3;
+            color: #173b25;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+        }
+
+        .donation-container {
+            width: 1100px;
+            max-width: 100%;
+            min-height: 720px;
+            display: grid;
+            grid-template-columns: 38% 62%;
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* LEFT SIDE */
+
+        .left-panel {
+            background: linear-gradient(160deg, #075d20, #32963d);
+            color: white;
+            padding: 55px 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-panel::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 50px solid rgba(255,255,255,0.06);
+            border-radius: 50%;
+            right: -130px;
+            top: -120px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 70px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .left-panel h1 {
+            font-size: 42px;
+            line-height: 1.1;
+            margin: 0 0 25px;
+        }
+
+        .left-panel h1 span {
+            color: #8ff28b;
+        }
+
+        .left-panel p {
+            line-height: 1.7;
+            font-size: 14px;
+            color: #e1f5e4;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 15px;
+            margin-top: 28px;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.13);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .benefit strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .benefit small {
+            color: #d7f2dc;
+        }
+
+        /* RIGHT SIDE */
+
+        .right-panel {
+            padding: 38px 45px;
+            background: #fff;
+        }
+
+        .heading {
+            margin-bottom: 25px;
+        }
+
+        .heading h2 {
+            margin: 0 0 8px;
+            font-size: 30px;
+            color: #126b29;
+        }
+
+        .heading p {
+            margin: 0;
+            color: #6b7d71;
+            font-size: 13px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: #214a2d;
+        }
+
+        .required {
+            color: #d22b2b;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #d6e2d9;
+            border-radius: 8px;
+            padding: 12px 13px;
+            font-size: 13px;
+            background: white;
+            color: #274632;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2e9b42;
+            box-shadow: 0 0 0 3px rgba(46,155,66,0.08);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 75px;
+        }
+
+        .quantity-row {
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            gap: 8px;
+        }
+
+        .upload-box {
+            border: 1.5px dashed #b8cdbd;
+            border-radius: 9px;
+            padding: 16px;
+            text-align: center;
+            background: #fbfefb;
+        }
+
+        .upload-box input {
+            border: none;
+            padding: 0;
+        }
+
+        .upload-note {
+            display: block;
+            font-size: 10px;
+            color: #7a8c80;
+            margin-top: 5px;
+        }
+
+        /* PRIORITY SECTION */
+
+        .priority-section {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #bfe5c6;
+            border-radius: 12px;
+            background: #f8fff9;
+        }
+
+        .priority-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .priority-title h3 {
+            margin: 0;
+            color: #176c2c;
+            font-size: 17px;
+        }
+
+        .priority-description {
+            font-size: 11px;
+            color: #718177;
+            margin: 0 0 18px 28px;
+        }
+
+        .info-box {
+            margin-top: 15px;
+            padding: 11px 13px;
+            background: #edf8ef;
+            border-radius: 7px;
+            font-size: 11px;
+            color: #45624d;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #29963b;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #217e30;
+        }
+
+        .message {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 7px;
+            display: none;
+            font-size: 12px;
+        }
+
+        .message.success {
+            display: block;
+            background: #e7f7ea;
+            color: #19732b;
+        }
+
+        .message.error {
+            display: block;
+            background: #fdeaea;
+            color: #a42626;
+        }
+
+        .security {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 10px;
+            color: #7b8a80;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 11px;
+        }
+
+        .back-link a {
+            color: #258537;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 850px) {
+            .donation-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-panel {
+                display: none;
+            }
+
+            .right-panel {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .page {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="donation-container">
+
+        <!-- ================= LEFT PANEL ================= -->
+
+        <div class="left-panel">
+
+            <div class="logo">
+                🌱 FoodRedistribute
+            </div>
+
+            <div class="badge">
+                🍲 FOOD DONATION
+            </div>
+
+            <h1>
+                Turn Surplus Food
+                <span>Into Hope.</span>
+            </h1>
+
+            <p>
+                Your extra food can become a meal for someone who needs it.
+                Share your surplus and help reduce food waste.
+            </p>
+
+            <div class="benefit">
+                <div class="benefit-icon">♻️</div>
+
+                <div>
+                    <strong>Reduce Food Waste</strong>
+                    <small>Give surplus food a second purpose.</small>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">💛</div>
+
+                <div>
+                    <strong>Help Communities</strong>
+                    <small>Connect your food with people in need.</small>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🌱</div>
+
+                <div>
+                    <strong>Create an Impact</strong>
+                    <small>Every donation contributes to a better community.</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT PANEL ================= -->
+
+        <div class="right-panel">
+
+            <div class="heading">
+                <h2>🍃 Donate Food</h2>
+
+                <p>
+                    Fill in the details below to donate surplus food.
+                    These details also help determine food priority.
+                </p>
+            </div>
+
+
+            <form id="donationForm">
+
+                <!-- BASIC DONATION INFORMATION -->
+
+                <div class="form-grid">
+
+                    <!-- FOOD NAME -->
+
+                    <div class="field">
+                        <label>
+                            Food Name <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="food_name"
+                            name="food_name"
+                            placeholder="e.g. Rice, Vegetables, Bread"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- FOOD TYPE -->
+
+                    <div class="field">
+                        <label>
+                            Food Type <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="food_type"
+                            name="food_type"
+                            required
+                        >
+                            <option value="">Select food type</option>
+                            <option value="cooked">Cooked Food</option>
+                            <option value="raw">Raw Food</option>
+                            <option value="packaged">Packaged Food</option>
+                            <option value="bakery">Bakery</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="field">
+                        <label>
+                            Quantity <span class="required">*</span>
+                        </label>
+
+                        <div class="quantity-row">
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="0.1"
+                                step="0.1"
+                                placeholder="Quantity"
+                                required
+                            >
+
+                            <select
+                                id="quantity_unit"
+                                name="quantity_unit"
+                            >
+                                <option value="kg">kg</option>
+                                <option value="g">g</option>
+                                <option value="litre">Litre</option>
+                                <option value="packets">Packets</option>
+                                <option value="boxes">Boxes</option>
+                                <option value="pieces">Pieces</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <!-- EXPIRY -->
+
+                    <div class="field">
+                        <label>
+                            Expiry Date & Time <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="expiry_time"
+                            name="expiry_time"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="field">
+                        <label>
+                            Pickup Location <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="Enter pickup location"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- FOOD IMAGE -->
+
+                    <div class="field">
+                        <label>
+                            Food Image <small>(Optional)</small>
+                        </label>
+
+                        <div class="upload-box">
+
+                            <input
+                                type="file"
+                                id="food_image"
+                                name="food_image"
+                                accept="image/png,image/jpeg,image/jpg"
+                            >
+
+                            <span class="upload-note">
+                                JPG / PNG image of the donated food
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PRIORITY ANALYSIS ================= -->
+
+                <div class="priority-section">
+
+                    <div class="priority-title">
+                        <span>📊</span>
+
+                        <h3>
+                            Additional Details for Priority Analysis
+                        </h3>
+                    </div>
+
+                    <p class="priority-description">
+                        These details help the system determine how urgently
+                        the food should be redistributed.
+                    </p>
+
+
+                    <div class="form-grid">
+
+                        <!-- FRESHNESS -->
+
+                        <div class="field">
+                            <label>
+                                Freshness Condition
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="freshness_condition"
+                                name="freshness_condition"
+                                required
+                            >
+                                <option value="">
+                                    Select condition
+                                </option>
+
+                                <option value="very_fresh">
+                                    Very Fresh
+                                </option>
+
+                                <option value="fresh">
+                                    Fresh
+                                </option>
+
+                                <option value="good">
+                                    Good
+                                </option>
+
+                                <option value="moderate">
+                                    Moderate
+                                </option>
+
+                                <option value="poor">
+                                    Poor
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- STORAGE -->
+
+                        <div class="field">
+                            <label>
+                                Storage Condition
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="storage_condition"
+                                name="storage_condition"
+                                required
+                            >
+                                <option value="">
+                                    Select storage condition
+                                </option>
+
+                                <option value="refrigerated">
+                                    Refrigerated
+                                </option>
+
+                                <option value="frozen">
+                                    Frozen
+                                </option>
+
+                                <option value="room_temperature">
+                                    Room Temperature
+                                </option>
+
+                                <option value="hot">
+                                    Hot / Heated
+                                </option>
+
+                                <option value="dry_storage">
+                                    Dry Storage
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- PACKAGING -->
+
+                        <div class="field">
+                            <label>
+                                Packaging Type
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="packaging_type"
+                                name="packaging_type"
+                                required
+                            >
+                                <option value="">
+                                    Select packaging
+                                </option>
+
+                                <option value="sealed">
+                                    Sealed
+                                </option>
+
+                                <option value="airtight">
+                                    Airtight
+                                </option>
+
+                                <option value="covered">
+                                    Covered
+                                </option>
+
+                                <option value="open">
+                                    Open
+                                </option>
+
+                                <option value="original">
+                                    Original Packaging
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- SERVINGS -->
+
+                        <div class="field">
+                            <label>
+                                Estimated Servings
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="servings"
+                                name="servings"
+                                min="1"
+                                placeholder="e.g. 10, 20, 50"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- SPECIAL NOTES -->
+
+                        <div class="field full">
+                            <label>
+                                Special Notes
+                                <small>(Optional)</small>
+                            </label>
+
+                            <textarea
+                                id="notes"
+                                name="notes"
+                                placeholder="e.g. Contains allergens, ready to eat, vegetarian, etc."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-box">
+                        💡 <strong>Priority calculation:</strong>
+                        The system uses food information and expiry time
+                        to determine the urgency of this donation.
+                        Food with less remaining time before expiry can
+                        receive a higher priority.
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SUBMIT ================= -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Donation &nbsp; →
+                </button>
+
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <div class="security">
+                    🔒 Your donation information is securely handled
+                    and used only for food redistribution.
+                </div>
+
+
+                <div class="back-link">
+                    Want to return?
+                    <a href="dashboard.html">Dashboard →</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    const API_BASE = "https://backend-bju0kn5g9-deepika-c083.vercel.app/api";
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
