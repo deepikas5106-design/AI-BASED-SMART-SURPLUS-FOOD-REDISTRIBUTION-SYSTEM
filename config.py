@@ -5,10 +5,13 @@ BASE_DIR = os.path.abspath(
     os.path.dirname(__file__)
 )
 
-INSTANCE_DIR = os.path.join(
-    BASE_DIR,
-    "instance"
-)
+if os.environ.get("VERCEL"):
+    INSTANCE_DIR = "/tmp/instance"
+else:
+    INSTANCE_DIR = os.path.join(
+        BASE_DIR,
+        "instance"
+    )
 
 os.makedirs(
     INSTANCE_DIR,
